@@ -26,8 +26,23 @@ nav > h3 {
   margin: 0;
 }
 
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+#post-body {
+  margin-bottom: .5rem;
+}
+
 .posts {
-  padding: 30px 10px 10px;
   max-width: 680px;
   margin: 0 auto;
+  padding: 1rem;
 }
