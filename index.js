@@ -12,3 +12,15 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
       document.querySelector(".posts").innerHTML = html;
     }
   });
+
+const postForm = document.querySelector(".post-form");
+postForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const titleInput = document.querySelector("#post-title").value;
+  const bodyInput = document.querySelector("#post-body").value;
+  const post = {
+    title: titleInput,
+    body: bodyInput,
+  };
+  console.log(post);
+});
