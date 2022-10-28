@@ -9,10 +9,14 @@
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #A8DADC;
 }
 
 nav {
-  background-color: beige;
+  background-color: #1D3557;
   padding: 5px;
   height: 30px;
   display: flex;
@@ -24,11 +28,16 @@ nav {
 
 nav > h3 {
   margin: 0;
+  color: #fff;
 }
 
 .form-container {
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
+  max-width: 680px;
+  background-color: #457B9D;
+  border-radius: 10%;
 }
 
 .post-form {
@@ -45,4 +54,16 @@ nav > h3 {
   max-width: 680px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+#postBtn {
+  border: none;
+  border-radius: 10%;
+  font-weight: 700;
+  width: 25%;
+  padding: 10px 5px;
+  align-self: center;
+  background-color: #E63946;
+  color: #fff;
+  cursor: pointer;
 }
