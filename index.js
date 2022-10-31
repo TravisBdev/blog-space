@@ -15,11 +15,6 @@ function renderPosts() {
   }
 }
 
-function clearForm() {
-  titleInput.value = "";
-  bodyInput.value = "";
-}
-
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
@@ -44,6 +39,6 @@ postForm.addEventListener("submit", (e) => {
     .then((post) => {
       postsArray.unshift(post);
       renderPosts();
-      clearForm();
+      form.reset();
     });
 });
