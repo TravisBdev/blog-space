@@ -1,4 +1,7 @@
 let postsArray = [];
+const titleInput = document.querySelector("#post-title");
+const bodyInput = document.querySelector("#post-body");
+const postForm = document.querySelector(".post-form");
 
 function renderPosts() {
   let html = "";
@@ -12,6 +15,11 @@ function renderPosts() {
   }
 }
 
+function clearForm() {
+  titleInput.value = "";
+  bodyInput.value = "";
+}
+
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
   .then((res) => res.json())
   .then((data) => {
@@ -19,14 +27,13 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     renderPosts();
   });
 
-const postForm = document.querySelector(".post-form");
 postForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const titleInput = document.querySelector("#post-title").value;
-  const bodyInput = document.querySelector("#post-body").value;
+  const postTitle = titleInput.value;
+  const postBody = bodyInput.value;
   const post = {
-    title: titleInput,
-    body: bodyInput,
+    title: postTitle,
+    body: postBody,
   };
   fetch("https://apis.scrimba.com/jsonplaceholder/posts", {
     method: "POST",
@@ -37,5 +44,6 @@ postForm.addEventListener("submit", (e) => {
     .then((post) => {
       postsArray.unshift(post);
       renderPosts();
+      clearForm();
     });
 });
